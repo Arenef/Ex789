@@ -7,16 +7,16 @@
 <p>Here's a table with all of the cookies that this browser is sending to the current server.</p>
 
 <table>
+<tr>
+    <th>Name</th>
+    <th>Value</th>
+</tr>
+<c:forEach var="c" items="${cookie}">
     <tr>
-        <th>Name</th>
-        <th>Value</th>
+        <td>${c.value.name}</td>
+        <td>${c.value.value}</td>
     </tr>
-    <c:forEach var="c" items="${cookie}">
-        <tr>
-            <td>${c.value.name}</td>
-            <td>${c.value.value}</td>
-        </tr>
-    </c:forEach>
+</c:forEach>
 </table>
 
 <p><a href="download?action=join">View list of albums</a></p>

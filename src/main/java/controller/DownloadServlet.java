@@ -7,6 +7,7 @@ import dto.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import util.CookieUtil;
 
 import java.io.IOException;
 
@@ -97,11 +98,10 @@ public class DownloadServlet extends HttpServlet {
     private String deleteCookies(HttpServletRequest request, HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
+            CookieUtil cookieUtil = new CookieUtil();
             for (Cookie cookie : cookies) {
                 if (!cookie.getName().equals("JSESSIONID")) {
-                    cookie.setMaxAge(0);
-                    cookie.setPath("/");
-                    response.addCookie(cookie);
+                    cookieUtil.deleteCookie(response, cookie.getName());
                 }
             }
         }
