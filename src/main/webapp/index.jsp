@@ -39,10 +39,12 @@
                             </tr>
                         </c:forEach>
                     </table>
+                <br>
                     <form action="download" method="get">
-                        <input type="submit" value="Go to Downloads (Album List)">
+                        <input type="submit" value="Go to Album List">
                     </form>
                     <p><a href="download?action=viewCookies">View all cookies</a></p>
+                    <p><a href="emailList.jsp">Survey</a></p>
             </body>
 
             </html>

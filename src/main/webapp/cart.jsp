@@ -48,7 +48,6 @@
         </tr>
     </c:forEach>
 
-
 </table>
 <p><b>To change the quantity </b>, enter the new quantity and click on the Update button</p>
 <form action="index.jsp" method="get">

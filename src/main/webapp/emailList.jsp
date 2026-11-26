@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title> Murach's Java Servlets and JSP</title>
+<link rel="stylesheet" href="styles/main.css" type="text/css">
+</head>
+
+<body>
+<img src="images/murachlogo.png" alt="Murach Logo" width=100>
+<header>
+    <h1> Survey </h1>
+</header>
+
+<main>
+    <p> If you have a moment, we'd appreciate it if you would fill out this survey</p>
+    <h2> Your information </h2>
+    <form action="emailList" method="post">
+        <input type="hidden" name="action" value="add">
+        <section>
+            <label> First Name: </label>
+            <input type="text" name="firstName" value="${user.firstName}" required><br>
+            <label> Last Name: </label>
+            <input type="text" name="lastName" value="${user.lastName}" required><br>
+            <label> Email: </label>
+            <input type="email" name="email" value="${user.email}" required><br>
+        </section>
+
+        <section>
+            <h2> How did you hear about us </h2>
+            <input type="radio" name="referral_source" value="Search Engine" required> Search engine
+            <input type="radio" name="referral_source" value="Word Of Mouth" required> World of mouth
+            <input type="radio" name="referral_source" value="Social Media" required> Social media
+            <input type="radio" name="referral_source" value="Other" required> Other
+        </section>
+
+        <section>
+            <h2> Would you like to receive announcements about new CDs and specials offers?</h2>
+            <input type="checkbox" name="announcements" value="yes"> YES, I'd like that.<br>
+            <input type="checkbox" name="offer" value="yes"> YES, please send me the new CDs.<br>
+            <p>
+                Please contact me by:
+                <select name="contactVia">
+                    <option value="Email" selected> Email only</option>
+                    <option value="Postal Mail">Postal mail only</option>
+                    <option value="Email and Postal Mail">Email or postal mail</option>
+                </select>
+            </p><br>
+        </section>
+        <input type="submit" name="submit" id="submit">
+    </form>
+    <br>
+    <form action="index.jsp" method="post">
+        <input type="submit" value="Return to home">
+    </form>
+</main>
+</body>
+
+</html>
