@@ -1,0 +1,22 @@
+[
+  {
+    "productCode": "8061",
+    "description": "86 (the band) - True Life Songs and Pictures",
+    "price": 14.95
+  },
+  {
+    "productCode": "pf01",
+    "description": "Paddlefoot - the first CD",
+    "price": 12.95
+  },
+  {
+    "productCode": "pf02",
+    "description": "Paddlefoot - The second CD",
+    "price": 14.95
+  },
+  {
+    "productCode": "jr01",
+    "description": "Joe Rut - Genuine Wood Grained Finish",
+    "price": 14.95
+  }
+]
