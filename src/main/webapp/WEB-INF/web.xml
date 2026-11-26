@@ -12,13 +12,12 @@
 
     <jsp-config>
         <jsp-property-group>
-            <url-pattern>/emailList.jsp</url-pattern>
-            <url-pattern>/thanks.jsp</url-pattern>
+            <url-pattern>*.jsp</url-pattern>
             <scripting-invalid>true</scripting-invalid>
         </jsp-property-group>
     </jsp-config>
 
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>loadProducts</welcome-file>
     </welcome-file-list>
 </web-app>

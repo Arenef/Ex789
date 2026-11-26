@@ -29,13 +29,13 @@
             <td>
                 <form action="updateQuantity" method="post">
                     <input type="hidden" name="action" value="update">
-                    <input type="hidden" name="productCode" value="${lineProduct.product.productCode}">
-                    <input type="text" name="quantity" value="${lineProduct.quantity}" required style="width: 35px">
+                    <input type="hidden" name="productCode" value="<c:out value='${lineProduct.product.productCode}'/>">
+                    <input type="text" name="quantity" value="<c:out value='${lineProduct.quantity}'/>" required style="width: 35px">
                     <input type="submit" name="update" value="Update">
                 </form>
             </td>
-            <td>${lineProduct.product.description}</td>
-            <td>$${lineProduct.product.price}</td>
+            <td><c:out value="${lineProduct.product.description}"/></td>
+            <td>$<c:out value="${lineProduct.product.price}"/></td>
             <td>
                 $<fmt:formatNumber value="${lineProduct.calculateAmount()}" pattern="0.00"/>
             </td>
@@ -50,7 +50,7 @@
 
 </table>
 <p><b>To change the quantity </b>, enter the new quantity and click on the Update button</p>
-<form action="index.jsp" method="get">
+<form action="loadProducts" method="get">
     <input type="submit" name="continueShopping" value="Continue Shopping">
 </form>
 <form action="checkoutCart" method="post">

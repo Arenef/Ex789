@@ -44,7 +44,7 @@ public class EmailListServlet extends HttpServlet {
             userIO.add(user, path);
 
             HttpSession session = request.getSession();
-            @SuppressWarnings("unchecked")
+
             ArrayList<User> users = (ArrayList<User>) session.getAttribute("users");
             if (users == null) {
                 users = new ArrayList<>(userIO.getUsers(path));

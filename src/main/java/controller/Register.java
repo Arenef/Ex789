@@ -7,6 +7,7 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+import util.CookieUtil;
 
 import java.io.IOException;
 
@@ -41,10 +42,10 @@ public class Register extends HttpServlet {
                 String path = sc.getRealPath("/WEB-INF/EmailList.json");
                 userIO.add(user, path);
 
-                Cookie c = new Cookie("userEmail", email);
-                c.setMaxAge(60 * 60 * 24 * 365 * 3);
-                c.setPath("/");
-                response.addCookie(c);
+                CookieUtil cookieUtil = new CookieUtil();
+                int maxAge = 60 * 60 * 24 * 365 * 3;
+                cookieUtil.addCookie(response, "userEmail", email, maxAge);
+                cookieUtil.addCookie(response, "firstNameCookie", firstName, maxAge);
 
                 url = "/" + product.getProductCode() + "_download.jsp";
             }
